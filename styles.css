@@ -83,7 +83,7 @@ button:hover {
 
 .theme-selector {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .clear-btn {
@@ -131,5 +131,228 @@ body.dark .add-btn:hover, body.dark .clear-btn:hover {
     background-color: #c0392b;
 }
 
-/* Additional Themes */
-/* Add other themes (Solarized, Retro, etc.) as described previously */
+/* Solarized Theme */
+body.solarized {
+    background-color: #fdf6e3;
+    color: #657b83;
+}
+
+body.solarized .todo-item, body.solarized .todo-item-done {
+    background-color: #eee8d5;
+    color: #657b83;
+    border-color: #93a1a1;
+}
+
+body.solarized .todo-item-done {
+    background-color: #839496;
+}
+
+body.solarized .filter-btn {
+    background-color: #93a1a1;
+}
+
+body.solarized .filter-btn.active {
+    background-color: #657b83;
+}
+
+body.solarized .add-btn, body.solarized .clear-btn {
+    background-color: #2aa198;
+}
+
+body.solarized .add-btn:hover, body.solarized .clear-btn:hover {
+    background-color: #268986;
+}
+
+/* High Contrast Theme */
+body.high-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+body.high-contrast .todo-item, body.high-contrast .todo-item-done {
+    background-color: #fff;
+    color: #000;
+    border-color: #000;
+}
+
+body.high-contrast .todo-item-done {
+    background-color: #ffeb3b;
+}
+
+body.high-contrast .filter-btn {
+    background-color: #ffeb3b;
+    color: #000;
+}
+
+body.high-contrast .filter-btn.active {
+    background-color: #000;
+    color: #fff;
+}
+
+body.high-contrast .add-btn, body.high-contrast .clear-btn {
+    background-color: #ff5722;
+}
+
+body.high-contrast .add-btn:hover, body.high-contrast .clear-btn:hover {
+    background-color: #e64a19;
+}
+
+/* Retro Theme */
+body.retro {
+    background-color: #f0f8ff;
+    color: #6b8e23;
+}
+
+body.retro .todo-item, body.retro .todo-item-done {
+    background-color: #fff5e1;
+    color: #6b8e23;
+    border-color: #d4af37;
+}
+
+body.retro .todo-item-done {
+    background-color: #98fb98;
+}
+
+body.retro .filter-btn {
+    background-color: #d4af37;
+}
+
+body.retro .filter-btn.active {
+    background-color: #6b8e23;
+}
+
+body.retro .add-btn, body.retro .clear-btn {
+    background-color: #d2691e;
+}
+
+body.retro .add-btn:hover, body.retro .clear-btn:hover {
+    background-color: #8b4513;
+}
+
+/* Midnight Theme */
+body.midnight {
+    background-color: #2c3e50;
+    color: white;
+}
+
+body.midnight .todo-item, body.midnight .todo-item-done {
+    background-color: #34495e;
+    color: white;
+    border-color: #7f8c8d;
+}
+
+body.midnight .todo-item-done {
+    background-color: #1abc9c;
+}
+
+body.midnight .filter-btn {
+    background-color: #1abc9c;
+}
+
+body.midnight .filter-btn.active {
+    background-color: #16a085;
+}
+
+body.midnight .add-btn, body.midnight .clear-btn {
+    background-color: #9b59b6;
+}
+
+body.midnight .add-btn:hover, body.midnight .clear-btn:hover {
+    background-color: #8e44ad;
+}
+
+/* Forest Theme */
+body.forest {
+    background-color: #2d6a4f;
+    color: white;
+}
+
+body.forest .todo-item, body.forest .todo-item-done {
+    background-color: #b7e4c7;
+    color: #2d6a4f;
+    border-color: #74c69d;
+}
+
+body.forest .todo-item-done {
+    background-color: #3b9a6b;
+}
+
+body.forest .filter-btn {
+    background-color: #74c69d;
+}
+
+body.forest .filter-btn.active {
+    background-color: #2d6a4f;
+}
+
+body.forest .add-btn, body.forest .clear-btn {
+    background-color: #84a98c;
+}
+
+body.forest .add-btn:hover, body.forest .clear-btn:hover {
+    background-color: #5a9a5e;
+}
+
+/* Pastel Theme */
+body.pastel {
+    background-color: #f3e9d2;
+    color: #9a9a9a;
+}
+
+body.pastel .todo-item, body.pastel .todo-item-done {
+    background-color: #f8f1e3;
+    color: #9a9a9a;
+    border-color: #d0d3d4;
+}
+
+body.pastel .todo-item-done {
+    background-color: #f7c8b0;
+}
+
+body.pastel .filter-btn {
+    background-color: #f7c8b0;
+}
+
+body.pastel .filter-btn.active {
+    background-color: #f59e42;
+}
+
+body.pastel .add-btn, body.pastel .clear-btn {
+    background-color: #ffb6b9;
+}
+
+body.pastel .add-btn:hover, body.pastel .clear-btn:hover {
+    background-color: #fc5c8c;
+}
+
+/* Cool Theme */
+body.cool {
+    background-color: #1e2a47;
+    color: #8fa3c7;
+}
+
+body.cool .todo-item, body.cool .todo-item-done {
+    background-color: #283d5a;
+    color: #8fa3c7;
+    border-color: #4a6572;
+}
+
+body.cool .todo-item-done {
+    background-color: #3c6478;
+}
+
+body.cool .filter-btn {
+    background-color: #4a6572;
+}
+
+body.cool .filter-btn.active {
+    background-color: #2a3d4c;
+}
+
+body.cool .add-btn, body.cool .clear-btn {
+    background-color: #4db8ff;
+}
+
+body.cool .add-btn:hover, body.cool .clear-btn:hover {
+    background-color: #00a0e0;
+}
