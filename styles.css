@@ -131,5 +131,159 @@ body.dark .add-btn:hover, body.dark .clear-btn:hover {
     background-color: #c0392b;
 }
 
+/* Default (Light Theme) */
+body {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+button.dark-theme {
+    background-color: #555;
+    color: white;
+}
+
+/* Blue Theme */
+body.blue-theme {
+    background-color: #007BFF;
+    color: white;
+}
+
+button.blue-theme {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Red Theme */
+body.red-theme {
+    background-color: #FF4C4C;
+    color: white;
+}
+
+button.red-theme {
+    background-color: #D23A3A;
+    color: white;
+}
+
+/* Green Theme */
+body.green-theme {
+    background-color: #28A745;
+    color: white;
+}
+
+button.green-theme {
+    background-color: #218838;
+    color: white;
+}
+
+/* Purple Theme */
+body.purple-theme {
+    background-color: #6f42c1;
+    color: white;
+}
+
+button.purple-theme {
+    background-color: #5a2e92;
+    color: white;
+}
+
+/* Yellow Theme */
+body.yellow-theme {
+    background-color: #FFC107;
+    color: #212529;
+}
+
+button.yellow-theme {
+    background-color: #e0a800;
+    color: white;
+}
+
+/* Orange Theme */
+body.orange-theme {
+    background-color: #fd7e14;
+    color: white;
+}
+
+button.orange-theme {
+    background-color: #e36b0a;
+    color: white;
+}
+
+/* Pink Theme */
+body.pink-theme {
+    background-color: #e83e8c;
+    color: white;
+}
+
+button.pink-theme {
+    background-color: #c2185b;
+    color: white;
+}
+
+/* Brown Theme */
+body.brown-theme {
+    background-color: #795548;
+    color: white;
+}
+
+button.brown-theme {
+    background-color: #5d4037;
+    color: white;
+}
+
+/* Teal Theme */
+body.teal-theme {
+    background-color: #20c997;
+    color: white;
+}
+
+button.teal-theme {
+    background-color: #18b589;
+    color: white;
+}
+
+/* Cyan Theme */
+body.cyan-theme {
+    background-color: #17a2b8;
+    color: white;
+}
+
+button.cyan-theme {
+    background-color: #117a8b;
+    color: white;
+}
+
+/* Slate Theme */
+body.slate-theme {
+    background-color: #343a40;
+    color: white;
+}
+
+button.slate-theme {
+    background-color: #23272b;
+    color: white;
+}
+
+/* Mint Theme */
+body.mint-theme {
+    background-color: #a8d8ea;
+    color: #212529;
+}
+
+button.mint-theme {
+    background-color: #86c1b9;
+    color: white;
+}
+
 /* Additional Themes */
 /* Add other themes (Solarized, Retro, etc.) as described previously */
