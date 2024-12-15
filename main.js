@@ -1,122 +1,83 @@
-// Elements
+// Function to change theme
+function changeTheme(theme) {
+    // Remove any previous theme classes
+    document.body.classList.remove('light-theme', 'dark-theme', 'blue-theme', 'red-theme', 'green-theme', 'purple-theme', 'yellow-theme', 'orange-theme', 'pink-theme', 'brown-theme', 'teal-theme', 'cyan-theme', 'slate-theme', 'mint-theme');
+    
+    // Add the selected theme
+    document.body.classList.add(`${theme}-theme`);
+    
+    // Save the theme to localStorage
+    localStorage.setItem('theme', theme);
+}
+
+// Apply the saved theme on page load
+document.addEventListener('DOMContentLoaded', function () {
+    const savedTheme = localStorage.getItem('theme') || 'light'; // Default to 'light' theme
+    changeTheme(savedTheme);
+});
+
+// Add Todo functionality
 let input = document.getElementById("todo-input");
 let submit = document.querySelector(".add-btn");
 let todoListDiv = document.querySelector(".todo-list");
-let clearAllBtn = document.getElementById("clear-all-btn");
-let filterBtns = document.querySelectorAll(".filter-btn");
-let themeSelect = document.getElementById("theme-select");
+let clearAllBtn = document.querySelector(".clear-btn");
 
-let todosArray = [];
-
-// Load initial data from localStorage
-loadTodosFromLocalStorage();
-filterTodos("all"); // Show all todos initially
-
-// Add new task when the "Add" button is clicked
-submit.addEventListener("click", function () {
-    addNewTask();
-});
-
-// Add new task when the "Enter" key is pressed
-input.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-        addNewTask();
+submit.onclick = function () {
+    const todoText = input.value.trim();
+    if (todoText) {
+        addTodoItem(todoText);
+        input.value = "";
     }
-});
+};
 
-// Function to add new task
-function addNewTask() {
-    const title = input.value.trim();
-    
-    if (!title) {
-        alert("Please enter a task.");
-        return;
-    }
-
+function addTodoItem(title) {
     const todo = { id: Date.now(), title, completed: false };
-    todosArray.push(todo);
-    syncTodosWithLocalStorage();
-    renderTodos(todosArray);
-
-    input.value = ""; // Clear input
-}
-
-// Filters
-filterBtns.forEach(btn => {
-    btn.addEventListener("click", function () {
-        filterBtns.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        filterTodos(btn.id); // Filter by the selected category
-    });
-});
-
-function filterTodos(filter) {
-    let filtered;
-    if (filter === "pending") filtered = todosArray.filter(todo => !todo.completed);
-    else if (filter === "completed") filtered = todosArray.filter(todo => todo.completed);
-    else filtered = todosArray; // "all"
-    renderTodos(filtered);
-}
-
-// Theme selection
-themeSelect.addEventListener("change", function () {
-    const theme = themeSelect.value;
-    document.body.className = theme; // Apply the selected theme class to the body
-});
-
-// Render tasks
-function renderTodos(todos) {
-    todoListDiv.innerHTML = ""; // Clear the todo list div before rendering
-    todos.forEach(todo => addTodoItemToHTML(todo));
-}
-
-function addTodoItemToHTML(todo) {
     const div = document.createElement("div");
-    div.className = todo.completed ? "todo-item todo-item-done" : "todo-item";
+    div.className = 'todo-item';
     div.dataset.id = todo.id;
-
     div.innerHTML = `
-        <div>
-            <input type="checkbox" class="todo-checkbox" ${todo.completed ? "checked" : ""}>
-            <span>${todo.title}</span>
+        <div class="todo-text">
+            <input type="checkbox" class="todo-checkbox" id="todo-checkbox-${todo.id}" onclick="toggleTodoStatus(${todo.id})">
+            <label for="todo-checkbox-${todo.id}" class="todo-title">${title}</label>
         </div>
-        <button class="delete-btn">Delete</button>
+        <div class="btn-container">
+            <button class="edit-btn" onclick="editTodoItem(${todo.id})">Edit</button>
+            <button class="delete-btn" onclick="deleteTodoItem(${todo.id})">Delete</button>
+        </div>
     `;
-
-    div.querySelector(".todo-checkbox").addEventListener("change", function () {
-        todo.completed = !todo.completed;
-        syncTodosWithLocalStorage();
-        filterTodos(document.querySelector(".filter-btn.active")?.id || "all");
-    });
-
-    div.querySelector(".delete-btn").addEventListener("click", function () {
-        todosArray = todosArray.filter(t => t.id !== todo.id);
-        syncTodosWithLocalStorage();
-        renderTodos(todosArray);
-    });
-
     todoListDiv.appendChild(div);
 }
 
-// Sync Todos with Local Storage
-function syncTodosWithLocalStorage() {
-    localStorage.setItem("todos", JSON.stringify(todosArray));
-}
-
-// Load Todos from Local Storage
-function loadTodosFromLocalStorage() {
-    const data = JSON.parse(localStorage.getItem("todos"));
-    if (data) {
-        todosArray = data;
-        renderTodos(todosArray);
+// Toggle todo status
+function toggleTodoStatus(id) {
+    const todoElement = document.querySelector(`[data-id="${id}"]`);
+    const checkbox = document.getElementById(`todo-checkbox-${id}`);
+    if (checkbox.checked) {
+        todoElement.classList.add('completed');
+    } else {
+        todoElement.classList.remove('completed');
     }
 }
 
-// Clear All Tasks
-clearAllBtn.addEventListener("click", function() {
-    if (confirm("Are you sure you want to delete all tasks?")) {
-        todosArray = [];
-        syncTodosWithLocalStorage();
-        renderTodos(todosArray);
-    }
+// Edit Todo Item
+function editTodoItem(id) {
+    const todoElement = document.querySelector(`[data-id="${id}"]`);
+    const label = todoElement.querySelector(".todo-title");
+    input.value = label.textContent;
+    submit.onclick = function () {
+        label.textContent = input.value.trim();
+        input.value = "";
+        submit.onclick = addTodoItem; // Reset to add new todo
+    };
+}
+
+// Delete Todo Item
+function deleteTodoItem(id) {
+    const todoElement = document.querySelector(`[data-id="${id}"]`);
+    todoListDiv.removeChild(todoElement);
+}
+
+// Clear All Todos
+clearAllBtn.addEventListener("click", function () {
+    todoListDiv.innerHTML = "";
 });
