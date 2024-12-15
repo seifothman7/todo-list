@@ -1,0 +1,135 @@
+/* Default Theme (Light Theme) */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.section-center {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.todo-form {
+    text-align: center;
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.add-btn {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-btn:hover {
+    background-color: #4cae4c;
+}
+
+.todo-container {
+    margin-top: 30px;
+}
+
+.todo-list {
+    margin: 20px 0;
+}
+
+.todo-item, .todo-item-done {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.todo-item-done {
+    background-color: #e0ffe0;
+    text-decoration: line-through;
+}
+
+button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.filter-btn {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #5bc0de;
+    color: white;
+    border-radius: 5px;
+}
+
+.filter-btn.active {
+    background-color: #31b0d5;
+}
+
+.theme-selector {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.clear-btn {
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.clear-btn:hover {
+    background-color: #c9302c;
+}
+
+/* Dark Theme */
+body.dark {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark .todo-item, body.dark .todo-item-done {
+    background-color: #333;
+    color: white;
+    border-color: #444;
+}
+
+body.dark .todo-item-done {
+    background-color: #555;
+}
+
+body.dark .filter-btn {
+    background-color: #444;
+}
+
+body.dark .filter-btn.active {
+    background-color: #222;
+}
+
+body.dark .add-btn, body.dark .clear-btn {
+    background-color: #e74c3c;
+}
+
+body.dark .add-btn:hover, body.dark .clear-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Additional Themes */
+/* Add other themes (Solarized, Retro, etc.) as described previously */
