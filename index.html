@@ -29,21 +29,20 @@
         </div>
     </div>
 
-    <div class="theme-switcher">
-        <button onclick="changeTheme('light')">Light Theme</button>
-        <button onclick="changeTheme('dark')">Dark Theme</button>
-        <button onclick="changeTheme('blue')">Blue Theme</button>
-        <button onclick="changeTheme('red')">Red Theme</button>
-        <button onclick="changeTheme('green')">Green Theme</button>
-        <button onclick="changeTheme('purple')">Purple Theme</button>
-        <button onclick="changeTheme('yellow')">Yellow Theme</button>
-        <button onclick="changeTheme('orange')">Orange Theme</button>
-        <button onclick="changeTheme('pink')">Pink Theme</button>
-        <button onclick="changeTheme('brown')">Brown Theme</button>
-        <button onclick="changeTheme('teal')">Teal Theme</button>
-        <button onclick="changeTheme('cyan')">Cyan Theme</button>
-        <button onclick="changeTheme('slate')">Slate Theme</button>
-        <button onclick="changeTheme('mint')">Mint Theme</button>
+    <div class="theme-selector">
+        <label for="theme-select">Choose Theme:</label>
+        <select id="theme-select">
+            <option value="default">Default</option>
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="solarized">Solarized</option>
+            <option value="high-contrast">High Contrast</option>
+            <option value="retro">Retro</option>
+            <option value="midnight">Midnight</option>
+            <option value="forest">Forest</option>
+            <option value="pastel">Pastel</option>
+            <option value="cool">Cool</option>
+        </select>
     </div>
 
     <script src="main.js"></script>
